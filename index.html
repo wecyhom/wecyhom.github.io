@@ -267,10 +267,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-07-29 09:21:50 / 修改时间：22:24:20" itemprop="dateCreated datePublished" datetime="2020-07-29T09:21:50+08:00">2020-07-29</time>
+              <time title="创建时间：2020-07-29 09:21:50" itemprop="dateCreated datePublished" datetime="2020-07-29T09:21:50+08:00">2020-07-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-30 08:29:21" itemprop="dateModified" datetime="2020-07-30T08:29:21+08:00">2020-07-30</time>
+              </span>
 
           
   
@@ -297,91 +303,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="速率限制"><a href="#速率限制" class="headerlink" title="速率限制"></a><a href="https://developer.twitter.com/en/docs/basics/rate-limits" target="_blank" rel="noopener">速率限制</a></h1><h2 id="每个窗口的标准API速率限制"><a href="#每个窗口的标准API速率限制" class="headerlink" title="每个窗口的标准API速率限制"></a>每个窗口的标准API速率限制</h2><p>下表中描述的标准API速率限制是指GET（读取）端点。请注意，图表中未列出的端点默认为每个用户分配15个请求。所有请求窗口的时长为15分钟。</p>
-<table>
-<thead>
-<tr>
-<th>Endpoint</th>
-<th>Resource family</th>
-<th>Requests/window(user auth)</th>
-<th>Requests/window(app auth)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>GET geo/id/:place_id</td>
-<td>geo</td>
-<td>75</td>
-<td>0</td>
-</tr>
-<tr>
-<td>GET search/tweets</td>
-<td>search</td>
-<td>180</td>
-<td>450</td>
-</tr>
-</tbody></table>
-<h1 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a><a href="https://developer.twitter.com/en/docs/basics/response-codes" target="_blank" rel="noopener">返回值</a></h1><table>
-<thead>
-<tr>
-<th>代码</th>
-<th>文本</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>420</td>
-<td>-</td>
-<td>当某个应用因发出过多请求而受到速率限制时返回</td>
-</tr>
-</tbody></table>
-<h1 id="API参考"><a href="#API参考" class="headerlink" title="API参考"></a><a href="https://developer.twitter.com/en/docs/api-reference-index" target="_blank" rel="noopener">API参考</a></h1><h2 id="搜索方法"><a href="#搜索方法" class="headerlink" title="搜索方法"></a>搜索方法</h2><p><strong>API.search</strong>(<em>q</em>[<em>, geocode*][</em>, lang<em>][</em>, locale<em>][</em>, result_type<em>][</em>, count<em>][</em>, until<em>][</em>, since_id<em>][</em>, max_id<em>][</em>, include_entities*])</p>
-<p>返回查询内容匹配的推文集合</p>
-<p><strong>参数：</strong>  </p>
-<ul>
-<li><p><strong>q</strong> – 查询的字符串不超过500个字符（包括运算符）。查询还可能受到复杂性的限制</p>
-</li>
-<li><p><strong>geocode</strong> – 返回位于指定经/纬度半径范围内的推文。位置优先从Geotagging API获取, 但是会退回其Twitter个人资料。参数包括“精度,纬度,半径”, 其中半径的单位必须指定为“<code>mi</code>” (miles)或“<code>km</code>” (kilometers).请注意，你无法通过API使用near运算符对任意位置进行地理编码;但是你可以使用<code>geocode</code>参数去直接搜寻附近的地理编码。使用半径参数时，最多允许查询1000个子区域。</p>
-</li>
-<li><p><strong>lang</strong> – 将推文限制为ISO 639-1代码给定的语言</p>
-</li>
-<li><p><strong>locale</strong> – 指定你查询所用的语言(仅<code>ja</code>当前有效)。这是正对特定语言的使用者，默认值在大多数情况下都适用。</p>
-</li>
-<li><p><strong>result_type</strong> –<br>只顶你希望接受的查询结果类型。默认值为“mixed”。有效值包括：</p>
-<ul>
-<li>mixed : 响应中同时包含热门结果和实时结果。</li>
-<li>recent : 仅返回响应中最新的结果</li>
-<li>popular : 仅返回响应中最受欢迎的结果</li>
-</ul>
-</li>
-<li><p><strong>count</strong> – 每页返回的推文数量，最多100条。默认值为15。</p>
-</li>
-<li><p><strong>until</strong> – 返回在指定日期之前创建的推文。日期格式应为YYYY-MM-DD。注意，搜索索引有7天的限制。</p>
-</li>
-<li><p><strong>since_id</strong> – 返回ID大于（即比指定ID更新）ID的结果。通过API访问的推文数量有限制。如果自since_id以来已发生Tweets限制，则since_id将被强制为可用的最早ID。</p>
-</li>
-<li><p><strong>max_id</strong> – 返回ID小于（即早于）或等于指定ID的结果。</p>
-</li>
-<li><p><strong>include_entities</strong> – 设置为false时将不包括<code>entiti</code>节点。默认为<code>true</code>。</p>
-</li>
-</ul>
-<h2 id="地理方法"><a href="#地理方法" class="headerlink" title="地理方法"></a>地理方法</h2><p><strong>API.reverse_geocode</strong>([<em>lat*][</em>, long<em>][</em>, accuracy<em>][</em>, granularity<em>][</em>, max_results*])</p>
-<p><strong>参数：</strong></p>
-<ul>
-<li><strong>lat</strong> – 查找的纬度，如果没有相应的<code>long</code>参数，将被忽略。。</li>
-<li><strong>long</strong> – 查找的经度，<code>geo_enabled</code>被禁用或没有相应的<code>lat</code>参数，则将忽略此参数。</li>
-<li><strong>accuracy</strong> – 指定要搜索的“区域”，如果是数字（则是一个以米为单位的半径，也可以使用带有ft后缀的字符串来指定英尺）。如果未传递，则假定为0m</li>
-<li><strong>granularity</strong> – 默认为<code>neighborhood</code>，这是查询时地方类型的最小粒度，包括：<code>neighborhood</code>, <code>city</code> , <code>admin</code> ，<code>country</code></li>
-<li><strong>max_results</strong> – 关于要返回的最大结果数的提示。这并不能保证返回的结果数等于max_results，而是告知要返回多少“附近”的结果。</li>
-</ul>
-<p><strong>API.geo_id(id)</strong></p>
-<p>提供给定地点的ID, 返回有关已知地点的所有信息。</p>
-<p><strong>参数：</strong>    <strong>ID</strong> – 地理位置有效的Twitter ID</p>
-<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>基于tweepy模块</p>
-<p><strong>exceptionTweepError</strong></p>
-<p>当一个<code>TweepError</code>因Twitter回应错误而引发时,错误代码可以被TweepError.<code>response.text</code>捕获。但是请注意，<code>TweepError</code>s 也可能与其他消息一起引发(例如普通字符串错误)。</p>
-<p><strong>exceptionRateLimitError</strong><br>当API方法达到Twitter的速率限制是引发。使得速率限制异常易于处理</p>
-<p>继承自<code>TweepError</code>,因此TweepError也会捕捉到<code>RateLimitError</code>。</p>
-
+          <h1 id="速率限制"><a href="#速率限制" class="headerlink" title="速率限制"></a><a href="https://developer.twitter.com/en/docs/basics/rate-limits" target="_blank" rel="noopener">速率限制</a></h1><h2 id="每个窗口的标准API速率限制"><a href="#每个窗口的标准API速率限制" class="headerlink" title="每个窗口的标准API速率限制"></a>每个窗口的标准API速率限制</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/29/twitter/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
