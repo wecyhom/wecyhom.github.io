@@ -22,28 +22,33 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="速率限制每个窗口的标准API速率限制下表中描述的标准API速率限制是指GET（读取）端点。请注意，图表中未列出的端点默认为每个用户分配15个请求。所有请求窗口的时长为15分钟。    Endpoint Resource family Requests&#x2F;window(user auth) Requests&#x2F;window(app auth)    GET geo&#x2F;id&#x2F;:place_id geo 75">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Twitter">
+<meta property="og:url" content="http://yoursite.com/2020/07/29/twitter/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="速率限制每个窗口的标准API速率限制下表中描述的标准API速率限制是指GET（读取）端点。请注意，图表中未列出的端点默认为每个用户分配15个请求。所有请求窗口的时长为15分钟。    Endpoint Resource family Requests&#x2F;window(user auth) Requests&#x2F;window(app auth)    GET geo&#x2F;id&#x2F;:place_id geo 75">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-29T01:21:50.000Z">
+<meta property="article:modified_time" content="2020-07-29T14:24:20.829Z">
 <meta property="article:author" content="wecyhom">
+<meta property="article:tag" content="api">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/07/29/twitter/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Blog</title>
+  <title>Twitter | Blog</title>
   
 
 
@@ -168,7 +173,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -180,6 +185,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#速率限制"><span class="nav-number">1.</span> <span class="nav-text">速率限制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#每个窗口的标准API速率限制"><span class="nav-number">1.1.</span> <span class="nav-text">每个窗口的标准API速率限制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#返回值"><span class="nav-number">2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#API参考"><span class="nav-number">3.</span> <span class="nav-text">API参考</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索方法"><span class="nav-number">3.1.</span> <span class="nav-text">搜索方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地理方法"><span class="nav-number">3.2.</span> <span class="nav-text">地理方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">3.3.</span> <span class="nav-text">异常</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -238,9 +244,10 @@
       <div class="main-inner">
         
 
-        <div class="content index posts-expand">
+        <div class="content post posts-expand">
           
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -256,10 +263,9 @@
       <meta itemprop="name" content="Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/29/twitter/" class="post-title-link" itemprop="url">Twitter</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Twitter
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -297,7 +303,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="速率限制"><a href="#速率限制" class="headerlink" title="速率限制"></a><a href="https://developer.twitter.com/en/docs/basics/rate-limits" target="_blank" rel="noopener">速率限制</a></h1><h2 id="每个窗口的标准API速率限制"><a href="#每个窗口的标准API速率限制" class="headerlink" title="每个窗口的标准API速率限制"></a>每个窗口的标准API速率限制</h2><p>下表中描述的标准API速率限制是指GET（读取）端点。请注意，图表中未列出的端点默认为每个用户分配15个请求。所有请求窗口的时长为15分钟。</p>
+        <h1 id="速率限制"><a href="#速率限制" class="headerlink" title="速率限制"></a><a href="https://developer.twitter.com/en/docs/basics/rate-limits" target="_blank" rel="noopener">速率限制</a></h1><h2 id="每个窗口的标准API速率限制"><a href="#每个窗口的标准API速率限制" class="headerlink" title="每个窗口的标准API速率限制"></a>每个窗口的标准API速率限制</h2><p>下表中描述的标准API速率限制是指GET（读取）端点。请注意，图表中未列出的端点默认为每个用户分配15个请求。所有请求窗口的时长为15分钟。</p>
 <table>
 <thead>
 <tr>
@@ -382,99 +388,40 @@
 <p><strong>exceptionRateLimitError</strong><br>当API方法达到Twitter的速率限制是引发。使得速率限制异常易于处理</p>
 <p>继承自<code>TweepError</code>,因此TweepError也会捕捉到<code>RateLimitError</code>。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/api/" rel="tag"># api</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/28/markdown/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="wecyhom">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/28/markdown/" class="post-title-link" itemprop="url">Markdown</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-07-28 17:07:30 / 修改时间：19:44:54" itemprop="dateCreated datePublished" datetime="2020-07-28T17:07:30+08:00">2020-07-28</time>
-            </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Markdown是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。 </p>
-<p><strong>你将了解到：</strong></p>
-<ul>
-<li>Markdown与传统格式化方法的不同</li>
-<li>如何使用Markdown格式化文本
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/28/markdown/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/28/markdown/" rel="prev" title="Markdown">
+      <i class="fa fa-chevron-left"></i> Markdown
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
   
 
 
-  
-
-
 
         </div>
         
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
